@@ -1,10 +1,4 @@
 #change partition permission
-# eMMC only
-/dev/block/mmcblk0                               0660    root    system
-/dev/block/mmcblk0boot0                          0660    root    system
-/dev/block/mmcblk0boot1                          0660    root    system
-/dev/misc-sd                                     0660    root    system
-
 # UFS only
 /dev/block/sda                                   0660    root    system
 /dev/block/sdb                                   0660    root    system
@@ -133,10 +127,6 @@
 /dev/irtx                 0660   system     system
 /dev/lirc*                0660   root       system
 /dev/ir-learning          0660   system     system
-# SGX device node
-/dev/pvrsrvkm             0666   root       root
-/dev/pvr_sync             0666   root       root
-
 
 /sys/devices/platform/leds-mt65xx/leds/green   delay_on      0664  system   system
 /sys/devices/platform/leds-mt65xx/leds/green   delay_off      0664  system   system
@@ -166,8 +156,6 @@
 
 #touch
 /dev/touch                0660   root       system
-/dev/hotknot              0660   root       system
-/dev/tll                  0660   root       system
 
 #hang_detect
 /dev/RT_Monitor           0600   system     system

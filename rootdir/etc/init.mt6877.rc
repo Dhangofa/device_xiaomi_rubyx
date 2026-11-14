@@ -250,21 +250,6 @@ on post-fs-data
     # Mali 3D GPU driver
     chmod 666 /dev/mali0
 
-    # Touch Panel
-    # chmod 0664 /dev/touch
-    chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time
-    chown root diag /sys/module/tpd_setting/parameters/tpd_mode
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time0
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time1
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_spl_num
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_pressure_threshold
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_auto_time_interval
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_sample_cnt
-    chown root diag /sys/module/tpd_setting/parameters/tpd_em_asamp
-    chown root diag /sys/module/tpd_debug/parameters/tpd_em_log
-    chown root diag /sys/module/tpd_debug/parameters/tpd_em_log_to_fs
-
     chmod 0666 /dev/pmem_multimedia
 
     #palm_sensor
@@ -544,10 +529,6 @@ on post-fs-data
     chmod 0640 /dev/vow
     chown media media /dev/vow
 
-    #MATV
-    chmod 0660 /dev/MATV
-    chown system media /dev/MATV
-
     # otg_test
     chown root radio /dev/mt_otg_test
     chmod 0660 /dev/mt_otg_test
@@ -568,32 +549,6 @@ on post-fs-data
     chmod 0660 /dev/mtk_dfrc
     chown system graphics /dev/mtk_dfrc
 
-
-   #change partition permission
-
-    chmod 0640 /mtd@sec_ro
-    chown root system /mtd@sec_ro
-
-    chmod 0640 /mtd@preloader
-    chown root system /mtd@preloader
-
-    chmod 0660 /mtd@pro_info
-    chown root system /mtd@pro_info
-
-    chmod 0640 /mtd@bootimg
-    chown root system /mtd@bootimg
-
-    chmod 0640 /mtd@recovery
-    chown root system /mtd@recovery
-
-    chmod 0660 /mtd@nvram
-    chown root system /mtd@nvram
-
-    chmod 0660 /mtd@seccfg
-    chown root system /mtd@seccfg
-
-    chmod 0660 /mtd@misc
-    chown root system /mtd@misc
 
     chmod 0664 /sys/bus/platform/drivers/emi_ctrl/concurrency_scenario
     chown media media /sys/bus/platform/drivers/emi_ctrl/concurrency_scenario
@@ -628,9 +583,6 @@ on post-fs-data
     chown root system /dev/mcupm
 
 on boot
-    setprop persist.vendor.vilte_support 1
-    setprop persist.vendor.viwifi_support 1
-
     chmod 0660 /sys/power/autosleep
 
     chmod 0664 /sys/class/leds/lcd-backlight/brightness
@@ -895,7 +847,6 @@ on boot
     write /proc/sys/kernel/sched_latency_ns 4000000
     write /proc/sys/kernel/sched_min_granularity_ns 800000
     write /proc/sys/kernel/sched_wakeup_granularity_ns 300000
-    write /proc/sys/kernel/sched_util_clamp_min 0
 
     # memory reserve tuning
     write /proc/sys/vm/vfs_cache_pressure 100
