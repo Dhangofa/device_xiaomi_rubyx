@@ -57,12 +57,12 @@ on enable-low-power
 
     # Runtime FS tuning
     # we should adjust the setting upon boot_complete for runtime performance
-    write /sys/block/sda/queue/read_ahead_kb 512
-    write /sys/block/sdb/queue/read_ahead_kb 512
-    write /sys/block/sdc/queue/read_ahead_kb 512
-    write /sys/block/sda/queue/nr_requests 64
-    write /sys/block/sdb/queue/nr_requests 64
-    write /sys/block/sdc/queue/nr_requests 64
+    write /sys/block/sda/queue/read_ahead_kb 128
+    write /sys/block/sdb/queue/read_ahead_kb 128
+    write /sys/block/sdc/queue/read_ahead_kb 128
+    write /sys/block/sda/queue/nr_requests 128
+    write /sys/block/sdb/queue/nr_requests 128
+    write /sys/block/sdc/queue/nr_requests 128
     write /sys/block/dm-0/queue/read_ahead_kb 128
     write /sys/block/dm-1/queue/read_ahead_kb 128
     write /sys/block/dm-2/queue/read_ahead_kb 128
