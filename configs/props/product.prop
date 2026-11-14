@@ -32,8 +32,5 @@ pm.dexopt.bg-dexopt=speed-profile
 pm.dexopt.boot=verify
 pm.dexopt.first-boot=verify
 
-# RKPD
-remote_provisioning.hostname=remoteprovisioning.googleapis.com
-
 # Wifi
 wifi.supplicant_scan_interval=120
