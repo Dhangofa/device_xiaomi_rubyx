@@ -36,7 +36,6 @@ on post-fs
     setprop sys.usb.mtp.device_type 3
 
     # ncm function
-    mkdir /config/usb_gadget/g1/functions/ncm.gs9
     write /config/usb_gadget/g1/functions/ncm.gs9/os_desc/interface.ncm/compatible_id WINNCM
     write /config/usb_gadget/g1/functions/ncm.gs9/ifname ncm%d
 
@@ -77,16 +76,6 @@ on post-fs
     chown system system /config/usb_gadget/g1/functions/midi.gs5/index
     chown system system /config/usb_gadget/g1/functions/midi.gs5/out_ports
     chown system system /config/usb_gadget/g1/functions/midi.gs5/qlen
-    chown system system /config/usb_gadget/g1/functions/mtp.gs0
-    chown system system /config/usb_gadget/g1/functions/mtp.gs0/os_desc
-    chown system system /config/usb_gadget/g1/functions/mtp.gs0/os_desc/interface.MTP
-    chown system system /config/usb_gadget/g1/functions/mtp.gs0/os_desc/interface.MTP/compatible_id
-    chown system system /config/usb_gadget/g1/functions/mtp.gs0/os_desc/interface.MTP/sub_compatible_id
-    chown system system /config/usb_gadget/g1/functions/ptp.gs1
-    chown system system /config/usb_gadget/g1/functions/ptp.gs1/os_desc
-    chown system system /config/usb_gadget/g1/functions/ptp.gs1/os_desc/interface.MTP
-    chown system system /config/usb_gadget/g1/functions/ptp.gs1/os_desc/interface.MTP/compatible_id
-    chown system system /config/usb_gadget/g1/functions/ptp.gs1/os_desc/interface.MTP/sub_compatible_id
     chown system system /config/usb_gadget/g1/functions/rndis.gs4
     chown system system /config/usb_gadget/g1/functions/rndis.gs4/class
     chown system system /config/usb_gadget/g1/functions/rndis.gs4/dev_addr
@@ -126,10 +115,7 @@ on post-fs
 on boot
     setprop sys.usb.configfs 2
     setprop sys.usb.controller "usb0"
-    write /sys/class/android_usb/android0/f_mtp/cpu_mask 0xF0
     write /sys/module/usb_f_mtp/parameters/mtp_rx_cont 1
-    chmod 0664 /sys/class/android_usb/android0/iSerial
-    chown root system /sys/class/android_usb/android0/iSerial
 
     chown radio system /sys/class/usb_rawbulk/data/enable
     chmod 0660 /sys/class/usb_rawbulk/data/enable
