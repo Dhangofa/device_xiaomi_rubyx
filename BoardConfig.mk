@@ -43,10 +43,6 @@ TARGET_DYNAMIC_64_32_DRMSERVER := true
 # Assert
 TARGET_OTA_ASSERT_DEVICE := ruby,rubyx
 
-# Bootconfig
-BOARD_BOOTCONFIG += \
-    androidboot.serialconsole=0
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := ruby
 TARGET_NO_BOOTLOADER := true
@@ -112,10 +108,8 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072                   # 2048      * 64   (pagesize)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728        # 131072    * 1024 (sdc32)
-BOARD_CACHEIMAGE_PARTITION_SIZE := 134217728       # 131072    * 1024 (sdc72)
 BOARD_DTBOIMG_PARTITION_SIZE := 33554432           # 32768     * 1024 (sdc35)
 BOARD_SUPER_PARTITION_SIZE := 9126805504  	       # 8912896   * 1024 (sdc61)
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USES_METADATA_PARTITION := true
 
 # Partitions (Dynamic)
@@ -208,9 +202,6 @@ WIFI_HIDL_FEATURE_AWARE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WIFI_FEATURE_HOSTAPD_11AX := true
 WIFI_FEATURE_SUPPLICANT_11AX := true
-
-# Better Optimization flags
-BOARD_COMPILER_OPTIMIZATION := speed
 
 # Inherit the proprietary files
 -include device/xiaomi/miuicamera-rubyx/BoardConfig.mk
