@@ -12,7 +12,7 @@ service vendor.secure_element /vendor/bin/hw/vendor.microtrust.hardware.se@1.0-s
     user system
     group nfc
 
-service vendor.mtk_secure_element_hal_service /vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
+service mtk_secure_element_hal_service /vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
     override
     disabled
     class early_hal
@@ -30,7 +30,7 @@ on early-init && property:ro.boot.hwc=GL
 on early-init && property:ro.boot.hwc=IN
     setprop ro.boot.product.vendor.sku nonfc
 
-on boot && property:ro.boot.product.vendor.sku=nfc
+on post-fs && property:ro.boot.product.vendor.sku=nfc
     enable vendor.st_nfc_hal_service
     enable vendor.secure_element
-    enable vendor.mtk_secure_element_hal_service
+    enable mtk_secure_element_hal_service
