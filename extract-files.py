@@ -105,9 +105,6 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/hw/vendor.mediatek.hardware.pq@2.14-impl.so'): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
 
-    'vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc': blob_fixup()
-        .regex_replace('start', 'enable'),
-        
     ('vendor/lib/libvcodec_oal.so'): blob_fixup()
         .clear_symbol_version('__aeabi_memcpy')
         .clear_symbol_version('__aeabi_memset')
