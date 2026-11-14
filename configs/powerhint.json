@@ -239,6 +239,24 @@
       "Value": "AUDIO_STREAMING_LOW_LATENCY"
     },
     {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "CPULittleClusterMinFreq",
+      "Duration": 1250,
+      "Value": "1703000"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "CPUBigClusterMinFreq",
+      "Duration": 1250,
+      "Value": "2000000"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "TAUclampMin",
+      "Duration": 1250,
+      "Value": "70"
+    },
+    {
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
