@@ -213,6 +213,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/init.recovery.mt6877.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mt6877.rc
 
+# Kaeru
+$(call soong_config_set_bool,fastbootd,bypass_lock_state,true)
+
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
