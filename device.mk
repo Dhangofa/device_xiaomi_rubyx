@@ -241,6 +241,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     MtkInCallService
 
+# MTK GED KPI
+$(call soong_config_set_bool,libgui,support_mtk_ged_kpi,true)
+
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.st \
